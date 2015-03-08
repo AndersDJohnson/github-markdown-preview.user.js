@@ -1,8 +1,8 @@
 {
-  "name": "github-markdown-preview-extension",
+  "name": "github-markdown-preview.user.js",
   "version": "1.0.0",
   "description": "GitHub markdown previews for editing comments.",
-  "main": "src/js/github-markdown-preview-extension.user.js",
+  "main": "src/js/github-markdown-preview.user.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

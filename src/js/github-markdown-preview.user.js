@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name       GitHub Markdown Preview
 // @namespace  https://github.com/AndersDJohnson/
-// @downloadURL https://github.com/AndersDJohnson/github-markdown-preview-extension/raw/master/src/js/github-markdown-preview-extension.user.js
-// @version    1.0.0
+// @downloadURL https://github.com/AndersDJohnson/github-markdown-preview.user.js/raw/master/src/js/github-markdown-preview.user.js
+// @version    1.0.1
 // @description GitHub markdown previews for editing comments.
 // @author     Anders D. Johnson
 // @copyright  2015+, Anders D. Johnson
