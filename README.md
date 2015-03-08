@@ -1,6 +1,6 @@
 # github-markdown-preview.user.js
 
-Preview comment edits on [GitHub] issues & PRs.
+Preview comment edits on [GitHub][GitHub]'s [issues][gh-issues] & [pull requests][gh-pulls].
 
 ## Install
 
@@ -28,6 +28,8 @@ You should see a new "Preview" button, which will render a preview
 of your comment in [GitHub Flavored Markdown] beneath the form.
 
 [GitHub]: https://github.com
+[gh-issues]: https://github.com/issues
+[gh-pulls]: https://github.com/pulls
 [GitHub Flavored Markdown]: https://help.github.com/articles/github-flavored-markdown/
 [Tampermonkey]: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en
 [Tumblr]: http://www.tumblr.com
