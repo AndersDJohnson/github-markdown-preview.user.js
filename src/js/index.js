@@ -1,3 +1,15 @@
+// ==UserScript==
+// @name       GitHub Markdown Preview
+// @namespace  https://github.com/AndersDJohnson/
+// @version    1.0.0
+// @description GitHub markdown previews for editing comments.
+// @author     Anders D. Johnson
+// @copyright  2015+, Anders D. Johnson
+// @match      *://*.github.com/*/pull/*
+// @match      *://*.github.com/*/issue/*
+// @require    https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
+// ==/UserScript==
+
 (function () {
   'use strict';
 
@@ -25,6 +37,12 @@
   };
 
 
+  GitHubMarkdownPreview.prototype.init = function () {
+    this.inited = true;
+    this.context = this.getContext();
+  };
+
+
   GitHubMarkdownPreview.prototype.getContext = function () {
     return 'AndersDJohnson/magnificent.js';
   };
@@ -32,7 +50,9 @@
 
   GitHubMarkdownPreview.prototype.run = function () {
 
-    this.context = this.getContext();
+    if (! this.inited) {
+      this.init();
+    }
 
     $(function () {
       var $comments = $('.js-comment-update');
@@ -47,6 +67,10 @@
 
   PreviewButton = function ($comment) {
     var that = this;
+
+    if ($comment.data('previewButton')) {
+      return;
+    }
 
     this.$comment = $comment;
 
@@ -137,6 +161,9 @@
 
 
   var gitHubMarkdownPreview = new GitHubMarkdownPreview();
-  gitHubMarkdownPreview.run();
+
+  setInterval(function () {
+    gitHubMarkdownPreview.run();
+  }, 1000);
 
 })();
