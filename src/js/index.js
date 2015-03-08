@@ -51,11 +51,20 @@
 
 
   GitHubMarkdownPreview.prototype.getContext = function () {
-    return 'AndersDJohnson/magnificent.js';
+    var pathname = window.location.pathname || '';
+    return this.parseContext(pathname);
+  };
+
+
+  GitHubMarkdownPreview.prototype.parseContext = function (pathname) {
+    pathname = pathname || '';
+    var match = pathname.match(/\/([^\/]+\/[^\/]+)/);
+    return match ? match[1] : null;
   };
 
 
   GitHubMarkdownPreview.prototype.run = function () {
+    var that = this;
 
     if (! this.inited) {
       this.init();
@@ -66,14 +75,16 @@
 
       $comments.each(function (i, el) {
         var $comment = $(el);
-        new PreviewButton($comment);
+        new PreviewButton($comment, that.context);
       });
     });
 
   };
 
-  PreviewButton = function ($comment) {
+  PreviewButton = function ($comment, context) {
     var that = this;
+
+    this.context = context;
 
     if ($comment.data('previewButton')) {
       return;
@@ -99,6 +110,7 @@
     e.stopImmediatePropagation();
 
     var $comment = this.$comment;
+    var context = this.context;
 
     var preview = $comment.data('preview');
     preview = preview || new Preview($comment);
@@ -107,11 +119,15 @@
 
     preview.loading();
 
-    GitHubMarkdownPreview.send({
+    var reqData ={
       "text": text,
-      "mode": "gfm",
-      "context": "github/gollum"
-    }, function (err, data, status, xhr) {
+      "mode": "gfm"
+    };
+    if (context) {
+      reqData.context = context;
+    }
+
+    GitHubMarkdownPreview.send(reqData, function (err, data, status, xhr) {
       if (err) {
         console.error(err, data, status, xhr);
         preview.html('Error loading preview: status: "' + status + '", data: "' + data + '"');
