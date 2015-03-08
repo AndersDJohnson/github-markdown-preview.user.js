@@ -6,6 +6,9 @@
     "Anders D. Johnson"
   ],
   "license": "ISC",
+  "main": [
+    "src/js/github-markdown-preview-extension.user.js"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
