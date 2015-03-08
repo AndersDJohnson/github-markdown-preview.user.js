@@ -101,6 +101,12 @@
 
     $comment.data('previewButton', this);
 
+    var $hidePreviewOnClick = $comment.find('.js-comment-cancel-button, [type="submit"]');
+    $hidePreviewOnClick.on('click', $.proxy(this.hidePreviewOnClick, this));
+
+    var preview = $comment.data('preview');
+    this.preview = preview || new Preview($comment);
+
     return this;
   };
 
@@ -111,13 +117,12 @@
 
     var $comment = this.$comment;
     var context = this.context;
-
-    var preview = $comment.data('preview');
-    preview = preview || new Preview($comment);
+    var preview = this.preview;
 
     var text = $comment.find('.comment-form-textarea').val();
 
     preview.loading();
+    preview.show();
 
     var reqData ={
       "text": text,
@@ -139,6 +144,12 @@
   };
 
 
+  PreviewButton.prototype.hidePreviewOnClick = function (e) {
+    this.preview.html('');
+    this.preview.hide();
+  };
+
+
   Preview = function ($comment) {
     var that = this;
 
@@ -156,7 +167,7 @@
       </div>'
     );
 
-    this.loading();
+    this.hide();
 
     $comment.append(this.$el);
     $comment.data('preview', this);
@@ -177,6 +188,11 @@
 
   Preview.prototype.show = function () {
     this.$el.show();
+  };
+
+
+  Preview.prototype.hide = function () {
+    this.$el.hide();
   };
 
 
