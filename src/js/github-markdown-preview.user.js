@@ -3,7 +3,7 @@
 // @namespace  https://github.com/AndersDJohnson/
 // @downloadURL https://github.com/AndersDJohnson/github-markdown-preview.user.js/raw/master/src/js/github-markdown-preview.user.js
 // @version    1.0.1
-// @description GitHub markdown previews for editing comments.
+// @description Preview comment edits on GitHub issues & PRs.
 // @author     Anders D. Johnson
 // @copyright  2015+, Anders D. Johnson
 // @match      *://*.github.com/*/pull*/*

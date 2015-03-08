@@ -1,6 +1,6 @@
 # github-markdown-preview.user.js
 
-Previews when editing comments on [GitHub] issues and pull requests.
+Preview comment edits on [GitHub] issues & PRs.
 
 ## Install
 
