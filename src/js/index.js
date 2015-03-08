@@ -10,6 +10,8 @@
 // @require    https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
 // ==/UserScript==
 
+/*global GM_xmlhttpRequest: true */
+
 (function () {
   'use strict';
 
@@ -23,15 +25,20 @@
 
 
   GitHubMarkdownPreview.send = function (data, callback) {
-    $.ajax({
-      method: 'POST',
-      url: 'https://api.github.com/markdown',
+    GM_xmlhttpRequest({ // jshint ignore:line
+      method: "POST",
+      url: "https://api.github.com/markdown",
       data: JSON.stringify(data),
-      success: function (data, status, xhr) {
-        callback(null, data, status, xhr);
+      headers: {
+        "Content-Type": "application/json"
       },
-      error: function (xhr, status, err) {
-        callback(status, err, xhr);
+      onload: function(response) {
+        if (response.status < 400) {
+          callback(null, response.responseText, response.statusText, response);
+        }
+        else {
+          callback(response.statusText, response.responseText, response.statusText, response);
+        }
       }
     });
   };
@@ -104,15 +111,14 @@
       "text": text,
       "mode": "gfm",
       "context": "github/gollum"
-    }, function (err, data) {
+    }, function (err, data, status, xhr) {
       if (err) {
-        console.error(err);
-        alert('Error: '+ err);
+        console.error(err, data, status, xhr);
+        preview.html('Error loading preview: status: "' + status + '", data: "' + data + '"');
         return;
       }
 
       preview.html(data);
-      //preview.show();
     });
   };
 
@@ -135,8 +141,6 @@
     );
 
     this.loading();
-
-    //this.$el.hide();
 
     $comment.append(this.$el);
     $comment.data('preview', this);
