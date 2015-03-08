@@ -5,8 +5,8 @@
 // @description GitHub markdown previews for editing comments.
 // @author     Anders D. Johnson
 // @copyright  2015+, Anders D. Johnson
-// @match      *://*.github.com/*/pull/*
-// @match      *://*.github.com/*/issue/*
+// @match      *://*.github.com/*/pull*/*
+// @match      *://*.github.com/*/issue*/*
 // @require    https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
 // ==/UserScript==
 
