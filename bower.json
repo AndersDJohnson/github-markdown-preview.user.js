@@ -1,6 +1,7 @@
 {
   "name": "github-markdown-preview-extension",
   "version": "1.0.0",
+  "description": "GitHub markdown previews for editing comments.",
   "authors": [
     "Anders D. Johnson"
   ],
