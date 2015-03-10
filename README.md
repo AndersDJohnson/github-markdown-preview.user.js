@@ -4,6 +4,7 @@ Preview comment edits on [GitHub][GitHub]'s [issues][gh-issues] & [pull requests
 
 Talks to the [GitHub API for Markdown](gh-api-md) to render comment previews in [GitHub Flavored Markdown], including issues and PRs references for the current repository.
 
+If it stops working for you at any point, it might be because you've exceeded what the API allows with [rate limiting][gh-rate-limit] for unauthenticated requests. If this becomes a problem, please let us know, and we could look at possibly integrating OAuth as an application, or allowing the user to configure a personal access token.
 
 ## Install
 
