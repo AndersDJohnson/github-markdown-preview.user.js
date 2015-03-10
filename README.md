@@ -1,6 +1,6 @@
 # github-markdown-preview.user.js
 
-Preview comment edits on [GitHub][GitHub]'s [issues][gh-issues] & [pull requests][gh-pulls].
+Preview comment edits on [GitHub][GitHub]'s [issues][gh-issues] & [pull requests][gh-pulls]. Not sure why GitHub is missing this feature, but user scripts to the rescue!
 
 ## Install
 
