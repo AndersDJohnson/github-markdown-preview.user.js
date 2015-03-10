@@ -2,6 +2,9 @@
 
 Preview comment edits on [GitHub][GitHub]'s [issues][gh-issues] & [pull requests][gh-pulls]. Not sure why GitHub is missing this feature, but user scripts to the rescue!
 
+Talks to the [GitHub API for Markdown](gh-api-md) to render comment previews in [GitHub Flavored Markdown], including issues and PRs references for the current repository.
+
+
 ## Install
 
 ### Chrome
@@ -25,11 +28,13 @@ See [GreaseMonkey]. Have not tested.
 
 Go to any GitHub issue or pull request and edit one of your comments.
 You should see a new "Preview" button, which will render a preview
-of your comment in [GitHub Flavored Markdown] beneath the form.
+of your comment beneath the form.
 
 [GitHub]: https://github.com
 [gh-issues]: https://github.com/issues
 [gh-pulls]: https://github.com/pulls
+[gh-api-md]: https://developer.github.com/v3/markdown/
+[gh-rate-limit]: https://developer.github.com/v3/#rate-limiting
 [GitHub Flavored Markdown]: https://help.github.com/articles/github-flavored-markdown/
 [Tampermonkey]: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en
 [Tumblr]: http://www.tumblr.com
