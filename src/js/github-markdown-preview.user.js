@@ -2,13 +2,14 @@
 // @name       GitHub Markdown Preview
 // @namespace  https://github.com/AndersDJohnson/
 // @downloadURL https://github.com/AndersDJohnson/github-markdown-preview.user.js/raw/master/src/js/github-markdown-preview.user.js
-// @version    1.0.1
+// @version    1.0.2
 // @description Preview comment edits on GitHub issues & PRs.
 // @author     Anders D. Johnson
 // @copyright  2015+, Anders D. Johnson
 // @match      *://*.github.com/*/pull*/*
 // @match      *://*.github.com/*/issue*/*
 // @require    https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
+// @grant      none
 // ==/UserScript==
 
 /*global GM_xmlhttpRequest: true */
