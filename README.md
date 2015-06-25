@@ -1,5 +1,7 @@
 # github-markdown-preview.user.js
 
+**NOTE: GitHub seems to have added issue comment previews since this plugin was released, so it may no longer be as or at all useful.**
+
 Preview comment edits on [GitHub][GitHub]'s [issues][gh-issues] & [pull requests][gh-pulls]. Not sure why GitHub is missing this feature, but user scripts to the rescue!
 
 Talks to the [GitHub API for Markdown](gh-api-md) to render comment previews in [GitHub Flavored Markdown], including issues and PRs references for the current repository.
