@@ -40,7 +40,5 @@ of your comment beneath the form.
 [gh-rate-limit]: https://developer.github.com/v3/#rate-limiting
 [GitHub Flavored Markdown]: https://help.github.com/articles/github-flavored-markdown/
 [Tampermonkey]: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en
-[Tumblr]: http://www.tumblr.com
-[Tumblr Dashboard]: http://www.tumblr.com/dashboard
 [Chromium User Scripts]: http://www.chromium.org/developers/design-documents/user-scripts
 [GreaseMonkey]: http://www.greasespot.net/
